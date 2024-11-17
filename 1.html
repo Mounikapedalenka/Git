@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Auction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .auction-item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .auction-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .auction-item .item-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .auction-item .item-description {
+      margin-bottom: 10px;
+    }
+
+    .auction-item .item-price {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .auction-item .bid-form {
+      display: flex;
+    }
+
+    .auction-item .bid-form input[type="number"] {
+      flex: 1;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .auction-item .bid-form button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .auction-item .bid-history {
+      margin-top: 10px;
+    }
+
+    .auction-item .bid-history p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Online Auction</h2>
+
+    <div class="auction-item">
+      <img src="item1.jpg" alt="Item 1">
+      <h3 class="item-title">Item 1</h3>
+      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="item-price">Current Price: $50</p>
+
+      <form class="bid-form">
+        <input type="number" min="1" step="1" placeholder="Enter your bid">
+        <button type="submit">Place Bid</button>
+      </form>
+
+      <div class="bid-history">
+        <h4>Bid History:</h4>
+        <p>User1 - $50</p>
+        <p>User2 - $55</p>
+      </div>
+    </div>
+
+    <div class="auction-item">
+      <img src="item2.jpg" alt="Item 2">
+      <h3 class="item-title">Item 2</h3>
+      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="item-price">Current Price: $80</p>
+
+      <form class="bid-form">
+        <input type="number" min="1" step="1" placeholder="Enter your bid">
+        <button type="submit">Place Bid</button>
+      </form>
+
+      <div class="bid-history">
+        <h4>Bid History:</h4>
+        <p>User3 - $80</p>
+        <p>User4 - $90</p>
+        <p>User2 - $95</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var bidForms = document.getElementsByClassName("bid-form");
+
+    for (var i = 0; i < bidForms.length; i++) {
+      bidForms[i].addEventListener("submit", function(event) {
+        event.preventDefault();
+        var bidInput = this.querySelector("input[type='number']");
+        var bidValue = parseFloat(bidInput.value);
+
+        if (!isNaN(bidValue) && bidValue > 0) {
+          var bidHistory = this.parentNode.querySelector(".bid-history");
+          var currentPrice = this.parentNode.querySelector(".item-price");
+          var currentPriceValue = parseFloat(currentPrice.textContent.replace("$", ""));
+
+          if (bidValue > currentPriceValue) {
+            var bidder = "User"; // Replace with the actual bidder name or ID
+            var newBid = document.createElement("p");
+            newBid.textContent = bidder + " - $" + bidValue;
+            bidHistory.appendChild(newBid);
+            currentPrice.textContent = "Current Price: $" + bidValue;
+          } else {
+            alert("Your bid must be higher than the current price.");
+          }
+        } else {
+          alert("Please enter a valid bid amount.");
+        }
+
+        bidInput.value = "";
+      });
+    }
+  </script>
+</body>
+</html>

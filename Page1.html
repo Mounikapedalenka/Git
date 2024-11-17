@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidder Boy | Online Auction</title>
+    <link rel="icon" type="image/x-icon" href="/AMTAuctionsLogo-01.jpg">
+    <style>
+        body{
+            background-color: rgb(9, 0, 109);
+        }
+        .main{
+            margin-top: 40px;
+        }
+        .A{
+            font-size:40px;
+            color:Red;
+            margin-left: 40px;
+            font-family:serif;
+        }
+        .B{
+            font-size:20px;
+            color:Red;
+            text-decoration: none;
+            margin-left: 880px;
+            font-family: monospace;
+        }
+        .C{
+            text-decoration: none;
+            margin-left: 50px;
+            font-family: monospace;      
+        }
+        .btn {
+            width: auto;
+            padding: 9px 15px;
+            background-color: #2dd06e;
+            font-size: 16px;
+            border-radius: 10px;
+            }
+        #size{
+            font-size:15px;
+            color: rgb(38, 202, 139);
+        } 
+        .first{
+            position:absolute;
+            top:180px;
+            left:90px;
+            background-color: rgb(197, 197, 197);
+            border: 3px solid rgb(0, 0, 0);
+            width:1150px;
+            height:100px;
+            padding: 90px ;
+            padding-top:20px;
+            padding-left:80px;
+            border-radius: 15px;
+            text-align:justify;
+            }
+            .bltn{
+            margin-top:380px; 
+            margin-left:570px;
+            width: auto;
+            padding: 25px 100px;
+            background-color: #57e690;
+            font-size: 16px;
+            border-radius: 10px;
+            }
+           #last{
+            margin-left:70px;
+            margin-top:300px;
+            background-color: rgb(154, 108, 190);
+            border: 3px solid rgb(0, 0, 0);
+            width:1350px;
+            height:200px;
+            border-radius:12px;
+           }
+           .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+ float:left;
+ margin-left:150px;
+ border-radius: 15px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #84c3ed;
+  color: white;
+  transform: rotateY(180deg);
+}
+a{
+    text-decoration: none;
+    color:rgb(6, 35, 169);
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+            <a class="A">Bidder Boy<sub id="size">Online Auction</sub></a>
+            <a href="About.html" class="B">About Us</a>
+            <a href="Both.html" class="C"><button type="submit" class="btn">Login</button></a>
+    </div>
+    <div class="first"> 
+      <p>Bidder Boy is India's first business to business auction site. We provide superior customer 
+        value by using dynamic pricing based solutions i.e. 'auctions' to create an online marketplace for
+        industrial assets. Auctions apart, our site also brings together buyers and sellers through a 
+        comprehensive listing and asset matching facility.Bidderboy.com conducted it's 1st online auction on
+        1st December 2011. Since then we are proudly India's No-1 Online Auctioneer with 20k+ Registered Members
+        We are also operating india's first online TV Shop TVDEAL.IN You can buy branded LED , 3D TV, Smart TV 
+        at ever lowest prices in india.Bidderboy has introduced a completely new and funny way of online shopping. 
+        Why spending a fortune for a brand new product if you can get it with a huge discount? We give you the chance
+        to get the products you dream about at amazing prices!Bidderboy.com is a new exciting auction website where you 
+        can win branded factory sealed new products at huge discounts up to 89% off. Look at our homepage to see what products
+        are up for auction right now, and if something seems interesting, why not bid for it!Bidderboy gives an opportunity to 
+        those people who can't afford to purchase costly branded products,they can try our risk free auctions to win their desired
+        products like Cars, Bikes, Smartphones, Laptop, Tablets & branded watches.
+      </p>
+    </div>
+  <div class="Sec">
+        <a href="Both.html" class="C"><button type="submit"class="bltn">Get Started</button></a>
+    </div><br><br><br><br>    
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="house.jpg" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="color:black">Welcome</h1> 
+            <h3 style="color:black">Here some are Houses are to be sold</h3> 
+            <h3 style="color:black">For more details click on Houses</h3>
+            <a href="Houses.html"><h1>Houses</h1></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="bike.jpg" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="color:black">Welcome</h1> 
+            <h3 style="color:black">Here some are Bikes are to be sold</h3> 
+            <h3 style="color:black">For more details click on Bikes</h3>
+            <a href="Bikes.html"><h1>Bikes</h1></a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="car.jpg" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1 style="color:black">Welcome</h1> 
+            <h3 style="color:black">Here some are Cars are to be sold</h3> 
+            <h3 style="color:black">For more details click on Cars</h3>
+            <a href="Cars.html"><h1>Cars</h1></a>
+          </div>
+        </div>
+      </div>
+<br><br><br><br><br><br>
+<div id="last">
+    <div id="last1">
+        <center>
+            <h3>&emsp;&emsp;<a href="Terms.html">Terms & Conditions</a> &emsp;   |&emsp;<a href="Terms.html">   Legal Terms Of use</a>&emsp;    |&emsp; <a href="Terms.html">   Privacy</a>&emsp;<br><br>
+              <a href="Terms.html"> How it works</a>&emsp; | &emsp;<a href="Terms.html">  FAQs</a>&emsp;  |&emsp; <a href="Terms.html">  Contact us</a>&emsp;</h3>
+    <img src="fb.jpg"width="40px"height="40px"style="border-radius:20px";>&emsp;
+    <img src="linked.jpeg"width="40px"height="40px"style="border-radius:20px";>&emsp;
+    <img src="Twit.jpeg"width="40px"height="40px"style="border-radius:20px";>&emsp;
+        </center>
+    </div>
+    <hr>
+    <div id="last2">
+        <center><p style="color:rgb(247, 177, 49)">Copyright 2011-2025 Bidderboy Coperation.All rights reserved</p></center> 
+    </div>
+</div>
+</body>
+</html>

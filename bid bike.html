@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Auction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      margin-top: 50px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .item-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .item-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .item-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-list li .title {
+      font-weight: bold;
+    }
+
+    .item-list li .bid {
+      color: #4CAF50;
+    }
+
+    .item-list li .button-container {
+      text-align: center;
+    }
+
+    .item-list li .button-container button {
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .item-list li .button-container button:hover {
+      background-color: #45a049;
+    }
+
+    .bid-form {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .bid-form input[type="number"] {
+      width: 100px;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    .bid-form button {
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .bid-form button:hover {
+      background-color: #45a049;
+    }
+    #img{
+      margin-left:600px;
+      bottom:70px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Online Auction</h2>
+    <ul class="item-list">
+      <li>
+        <span class="title">Bike 1</span>
+        <br>
+        Current Bid: <span class="bid">$1000</span>
+        <div class="button-container">
+          <button onclick="placeBid(1)">Place Bid</button>
+        </div>
+      </li>
+      <li>
+        <span class="title">Bike 2</span>
+        <br>
+        Current Bid: <span class="bid">$1200</span>
+        <div class="button-container">
+          <button onclick="placeBid(2)">Place Bid</button>
+        </div>
+      </li>
+      <li>
+        <span class="title">Bike 3</span>
+        <br>
+        Current Bid: <span class="bid">$1500</span>
+        <div class="button-container">
+          <button onclick="placeBid(3)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 4</span>
+        <br>
+        Current Bid: <span class="bid">$2500</span>
+        <div class="button-container">
+          <button onclick="placeBid(4)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 5</span>
+        <br>
+        Current Bid: <span class="bid">$3000</span>
+        <div class="button-container">
+          <button onclick="placeBid(5)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 6</span>
+        <br>
+        Current Bid: <span class="bid">$3250</span>
+        <div class="button-container">
+          <button onclick="placeBid(6)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 7</span>
+        <br>
+        Current Bid: <span class="bid">$4550</span>
+        <div class="button-container">
+          <button onclick="placeBid(7)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 8</span>
+        <br>
+        Current Bid: <span class="bid">$2500</span>
+        <div class="button-container">
+          <button onclick="placeBid(8)">Place Bid</button>
+        </div>
+      </li>
+
+      <li>
+        <span class="title">Bike 9</span>
+        <br>
+        Current Bid: <span class="bid">$1100</span>
+        <div class="button-container">
+          <button onclick="placeBid(9)">Place Bid</button>
+        </div>
+      </li>
+    </ul>
+    <div class="bid-form">
+      <label for="bidAmount">Your Bid:</label>
+      <input type="number" id="bidAmount" min="1" step="1" required>
+      <button onclick="submitBid()">Submit Bid</button>
+    </div>
+  </div>
+
+  <script>
+    var currentBid = [1000, 1200, 1500,2500,3000,3250,4550,2500,1100]; // Array to store current bids for each item
+
+    function placeBid(itemId) {
+      var itemIndex = itemId - 1;
+      var bidInput = document.getElementById("bidAmount");
+      bidInput.value = currentBid[itemIndex] + 10; // Increment the current bid by 10
+
+      // Scroll to the bid form
+      bidInput.scrollIntoView({ behavior: "smooth" });
+      bidInput.focus();
+    }
+
+    function submitBid() {
+      var bidInput = document.getElementById("bidAmount");
+      var bidAmount = parseInt(bidInput.value);
+
+      // Validate the bid amount
+      if (isNaN(bidAmount) || bidAmount <= 0) {
+        alert("Invalid bid amount");
+        bidInput.value = "";
+        bidInput.focus();
+        return;
+      }
+
+      // Perform bid submission logic here
+      // For this example, we'll just display an alert with the submitted bid amount
+      alert("Bid submitted: $" + bidAmount+"    Your bid must be higher than the current price.");
+
+      // Clear the bid input field
+      bidInput.value = "";
+    }
+  </script>
+</body>
+</html>
+
